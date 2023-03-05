@@ -37,3 +37,15 @@ cd /srv/tftp/memtest/
 wget https://www.memtest.org/download/v6.10/mt86plus_6.10.binaries.zip
 sudo apt-get install unzip
 unzip mt86plus_6.10.binaries.zip
+
+
+
+#apache:
+
+sudo apt install apache2 -y
+
+sudo systemctl enable apache2
+sudo systemctl restart apache2
+
+cp $CONFIG_PATH/000-default.conf /etc/apache2/sites-available/000-default.conf
+cp $CONFIG_PATH/apache2.conf /etc/apache2/apache2.conf
