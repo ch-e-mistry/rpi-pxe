@@ -1,3 +1,5 @@
 .vagrant
-/srv/*
+srv/*
+!srv/tftp
+srv/tftp/*
 !srv/tftp/menu.lst

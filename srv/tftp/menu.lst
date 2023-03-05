@@ -1,0 +1,13 @@
+# display this heading
+write (md)0x220+1 !BAT\necho -n -P:0000 $[0133]                    --- CH-E-MISTRY PXE-BOOT Created by Humikacp ---                                    \0
+initscript (md)0x220+1
+
+##################################################################################
+title MemTest86+ \nMemory test tool
+pxe keep
+root (pd)/memtest/mt86plus_6.10_64.iso
+map --mem (pd)/memtest/mt86plus_6.10_64.iso (0xff)
+map --hook
+root (0xff)
+chainloader (0xff)
+##################################################################################
